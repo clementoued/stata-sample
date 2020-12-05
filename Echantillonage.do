@@ -32,14 +32,13 @@ ssc install moremata, replace
 ssc install gsample, replace
 
 
-***Installation manuelle du module gsample sous Stata
-*creer un dossier portant le nom "temp" dans le disque C de votre ordi
-*extraire le fichier "gsample.zip" et "moremata" dans ce dossier
+***Installation manuelle du module gsample sous stata
+*extraire le fichier "gsample.zip" et "moremata" dans le disque C
 *sous stata executer les syntaxes ci apres
-net from "C:/temp/"
+net from "C:/gsample/"
 net install gsample, replace
 
-net from "C:/temp/"
+net from "C:/moremata/"
 net install moremata, replace
 
 *tirage echantillon
@@ -79,7 +78,8 @@ save "C:\Users\Dell\Desktop\ECHANTILLONAGE\EchantillonSG.dta", replace
 
 
 ***SONDAGE A PLUSIEURS DEGRES
-use "C:\Users\Dell\Desktop\ECHANTILLONAGE\EchantillonSG.dta", replace
+*tirage des grappes au premier degré (fait précédemment)
+*tirage au second degré 
 sample 1 , count by (REGION)
 save "C:\Users\Dell\Desktop\ECHANTILLONAGE\EchantillonSG.dta", replace
 
